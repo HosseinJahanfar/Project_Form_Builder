@@ -66,13 +66,16 @@ class _RenderUiWidgetState extends State<RenderUiWidget> {
     return Form(
       key: _formKey,
       child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: ListView.builder(
           shrinkWrap: true,
+          physics:  const NeverScrollableScrollPhysics(),
           padding: EdgeInsets.symmetric(
               horizontal: getWidth(
                 context,
                 0.05,
               ),
+
               vertical: getWidth(context, 0.05)),
           itemCount: widget.state.listData!.length,
           itemBuilder: (context, index) {
